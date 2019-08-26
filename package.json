@@ -1,0 +1,14 @@
+{
+  "name": "tcp-packet",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Tobias Baunbæk Christensen <freeall@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}
