@@ -1,14 +1,15 @@
 exports.encode = encode
 exports.decode = decode
 
-function encode ({ data, sourcePort, destinationPort, sequenceNumber = 0, acknowledgmentNumber = 0 }) {
-  const packet = Buffer.alloc(20 + data.length)
+function encode({ data, sourcePort, destinationPort, sequenceNumber = 0, acknowledgmentNumber = 0 }) {
+  const dataLength = data ? data.length : 0
+  const packet = Buffer.alloc(20 + dataLength)
   packet.writeUInt16BE(sourcePort, 0)
   packet.writeUInt16BE(destinationPort, 2)
   packet.writeUInt32BE(sequenceNumber, 4)
   packet.writeUInt32BE(acknowledgmentNumber, 8)
   packet.writeUInt16BE(0x5000, 12)
-  data.copy(packet, 20)
+  if (data) data.copy(packet, 20)
   return packet
 }
 
