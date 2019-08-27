@@ -6,6 +6,10 @@
   "scripts": {
     "test": "node test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:onomondo/tcp-packet.git"
+  },
   "author": "Tobias Baunbæk Christensen <freeall@gmail.com>",
   "license": "ISC",
   "devDependencies": {
